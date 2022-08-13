@@ -80,6 +80,9 @@ on Windows. Feel free to open a PR with required changes if needed.
 
 ## References
 
-- [Mighty](https://github.com/MightyOrm/Mighty)
-- [OrmLite](https://docs.servicestack.net/ormlite)
-- [FluentMigrator](https://github.com/fluentmigrator/fluentmigrator)
+- [FluentMigrator](https://github.com/fluentmigrator/fluentmigrator) - Heavily
+  recommended to keep your app environments synced;
+- [Mighty](https://github.com/MightyOrm/Mighty) - Nice and easy to use micro
+  ORM;
+- [OrmLite](https://docs.servicestack.net/ormlite) - Another nice and easy to
+  use ORM;
