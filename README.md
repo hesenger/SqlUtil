@@ -1,6 +1,7 @@
 # SqlUtil
 
-![Nuget Package](https://img.shields.io/nuget/v/SqlUtil.svg)
+[![Nuget Package](https://img.shields.io/nuget/v/SqlUtil.svg)](https://www.nuget.org/packages/FluentMigrator/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/SqlUtil.svg)](https://www.nuget.org/packages/FluentMigrator/)
 
 SqlUtil is a convention over configuration ORM intended to be used by
 new projects without a hard data structure to follow. The idea is to provide
@@ -76,3 +77,9 @@ bear in mind some points.:
 In theory you are able to use the full version of Visual Studio, though I'm
 currently working using vscode from a mac m1 (dotnet 6) and only running tests
 on Windows. Feel free to open a PR with required changes if needed.
+
+## References
+
+- [Mighty](https://github.com/MightyOrm/Mighty)
+- [OrmLite](https://docs.servicestack.net/ormlite)
+- [FluentMigrator](https://github.com/fluentmigrator/fluentmigrator)
