@@ -62,7 +62,7 @@ in repo root with a connection string to your test database.
 
 ```json
 {
-  "connectionString": "<your test sql server database>"
+  "ConnectionString": "<your test sql server database>"
 }
 ```
 

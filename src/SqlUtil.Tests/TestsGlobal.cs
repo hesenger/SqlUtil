@@ -7,14 +7,14 @@ using NUnit.Framework;
 namespace SqlUtil.Tests;
 
 [SetUpFixture]
-public static class TestsGlobal
+public class TestsGlobal
 {
     public static Settings? Settings { get; set; }
 
     [OneTimeSetUp]
-    public static void SetUp()
+    public void SetUp()
     {
-        var settingsContent = File.ReadAllText("settings.json");
+        var settingsContent = File.ReadAllText(".settings.json");
         Settings = JsonSerializer.Deserialize<Settings>(settingsContent);
     }
 }

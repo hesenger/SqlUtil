@@ -1,5 +1,3 @@
-
-
 namespace SqlUtil.Tests;
 
 public class Settings

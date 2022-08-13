@@ -6,9 +6,9 @@ namespace SqlUtil.Tests;
 public class DatabaseTests
 {
     [Test]
-    public void Test()
+    public void SettingsWereLoaded()
     {
-        var db = new Database();
-        Assert.IsNotNull(db);
+        var db = new Database(TestsGlobal.Settings?.ConnectionString!);
+        Assert.That(db.ConnectionString, Is.Not.Null);
     }
 }
