@@ -22,25 +22,25 @@ those but if you have chance to write it the process will speed up.
 ## Examples
 
 ```csharp
-    var db = new Database(connectionString);
-    var users = db.From<User>()
-        .LeftJoin(x => x.Group)
-        .Select();
+var db = new Database(connectionString);
+var users = db.From<User>()
+    .LeftJoin(x => x.Group)
+    .Select();
 
-    users.ForEach(user => Console.WriteLine(user));
+users.ForEach(user => Console.WriteLine(user));
 
-    public class User
-    {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public Group Group { get; set; }
-    }
+public class User
+{
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public Group Group { get; set; }
+}
 
-    public class Group
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+public class Group
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
 ```
 
 ## Version 2
@@ -69,4 +69,10 @@ bear in mind some points.:
   readability;
 
 - Tests everywhere! This is a library so write and update tests when doing
-  changes.
+  changes;
+
+### Environment to contribute
+
+In theory you are able to use the full version of Visual Studio, though I'm
+currently working using vscode from a mac m1 (dotnet 6) and only running tests
+on Windows. Feel free to open a PR with required changes if needed.
