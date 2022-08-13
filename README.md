@@ -44,6 +44,11 @@ public class Group
 }
 ```
 
+## Database support
+
+The project oficially supports only Sql Server, though it should be easily
+extensible by extending classes like `DatabaseProvider` and `SqlBuilder`.
+
 ## Version 2
 
 Version 2 is fully converted to dotnet 6, although I try to still maintaining
@@ -51,6 +56,22 @@ the Version 1 with minor updates, this is a library focused on new projects
 and if you are creating new projects in .NET Framework 4 🤷‍♂️.
 
 ## Contributing
+
+Pretty much everything you need to contribute is create a `.settings.json` file
+in repo root with a connection string to your test database.
+
+```json
+{
+  "connectionString": "<your test sql server database>"
+}
+```
+
+```bash
+git clone git@github.com:hesenger/SqlUtil.git
+cd SqlUtil
+echo "{}" > .settings.json # add your connection string to this file as above
+dotnet test
+```
 
 Some rules are needed, though feel free to open Pull Requests and we will
 discuss about design or other concerns. Code reviewing is one of the most
