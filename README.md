@@ -44,7 +44,7 @@ public class Group
 }
 ```
 
-## Database support
+## Supported databases
 
 The project oficially supports only Sql Server, though it should be easily
 extensible by extending classes like `DatabaseProvider` and `SqlBuilder`.
