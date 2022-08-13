@@ -62,7 +62,7 @@ bear in mind some points.:
 - Tables and column names will match exatcly (case sensitive) classes and
   properties, unless there is a NamingConvention involved;
 
-- No `internal` or `sealed` classes at all, this is a open source project and
+- No `internal` or `sealed` classes at all, this is an open source project and
   we want anyone that wants to change some behavior do it;
 
 - No public static methods or properties for the same reason above, they are not
