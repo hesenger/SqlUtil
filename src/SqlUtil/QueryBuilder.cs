@@ -1,36 +1,48 @@
+using System.Linq.Expressions;
+using SqlUtil.Schema;
+
 namespace SqlUtil;
 
-public class QueryBuilder<T> where T : class
+public class QueryBuilder<TFrom> where TFrom : class
 {
-    public QueryBuilder(Database database)
+    public QueryBuilder(Database database,
+        QueryEngine queryEngine)
     {
         Database = database;
+        QueryEngine = queryEngine;
     }
 
-    public virtual Database Database { get; set; }
+    protected virtual Database Database { get; set; }
 
-    public virtual QueryBuilder<T> Join()
+    protected virtual QueryEngine QueryEngine { get; set; }
+
+    public virtual JoinedQueryBuilder<TFrom, TJoin1> LeftJoin<TJoin1>(
+        Expression<Func<TFrom, TJoin1?>> joinProperty)
+        where TJoin1 : class
     {
-        return this;
+        QueryEngine.AddJoin(
+            QueryJoinKind.LeftJoin,
+            joinProperty);
+        return new JoinedQueryBuilder<TFrom, TJoin1>(QueryEngine);
     }
 
-    public virtual QueryBuilder<T> LeftJoin()
+    public virtual JoinedQueryBuilder<TFrom, TJoin1> RightJoin<TJoin1>(
+        Expression<Func<TFrom, TJoin1?>> joinProperty)
+        where TJoin1 : class
     {
-        return this;
+        QueryEngine.AddJoin(
+            QueryJoinKind.RightJoin,
+            joinProperty);
+        return new JoinedQueryBuilder<TFrom, TJoin1>(QueryEngine);
     }
 
-    public virtual QueryBuilder<T> RightJoin()
+    public virtual IList<TFrom> All()
     {
-        return this;
+        return QueryEngine.Execute<TFrom>();
     }
 
-    public virtual IList<T> All()
+    public virtual TFrom? First()
     {
-        return new List<T>();
-    }
-
-    public virtual T? First()
-    {
-        return null;
+        return QueryEngine.Execute<TFrom>().FirstOrDefault();
     }
 }

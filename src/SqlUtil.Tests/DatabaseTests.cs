@@ -16,9 +16,22 @@ public class DatabaseTests
     [Test]
     public void All()
     {
-        var db = new Database(TestsGlobal.Settings?.ConnectionString!);
+        var db = new Database(TestsGlobal.Settings!.ConnectionString!);
         var all = db.From<User>().All();
 
-        Assert.That(all, Has.Length.GreaterThan(0));
+        Assert.That(all, Has.Count.EqualTo(0));
+    }
+
+    [Test]
+    public void JoinAll()
+    {
+        var db = new Database(TestsGlobal.Settings!.ConnectionString!);
+        var all = db
+            .From<User>()
+            .LeftJoin(x => x.Group)
+            .LeftJoin((user, group) => group.Name)
+            .All();
+
+        Assert.That(all, Has.Count.EqualTo(0));
     }
 }
