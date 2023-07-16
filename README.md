@@ -1,5 +1,8 @@
 # SqlUtil
 
+[![Nuget Package](https://img.shields.io/nuget/v/SqlUtil.svg)](https://www.nuget.org/packages/SqlUtil/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/SqlUtil.svg)](https://www.nuget.org/packages/SqlUtil/)
+
 SqlUtil started as a thin layer to help data driven applications
 interact with a database by helping in mapping and tracking data into classes.
 
