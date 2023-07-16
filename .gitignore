@@ -5,9 +5,6 @@ project.lock.json
 *.pyc
 nupkg/
 
-# Visual Studio Code
-.vscode
-
 # Rider
 .idea
 
@@ -35,5 +32,3 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-
-.settings.json
